@@ -13,6 +13,7 @@ const initialValues = {
   password: "",
   remember: false,
 };
+
 const onSubmit = async (values, submitMethods, navigate) => {
   try {
     const res = await loginService(values);
@@ -28,6 +29,7 @@ const onSubmit = async (values, submitMethods, navigate) => {
     Alert("متاسفم...!", "متاسفانه مشکلی از سمت سرور رخ داده", "error");
   }
 };
+
 const validationSchema = Yup.object({
   phone: Yup.number().required("لطفا این قسمت را پر کنید"),
   password: Yup.string()
@@ -38,6 +40,7 @@ const validationSchema = Yup.object({
 
 const Login = () => {
   const navigate = useNavigate();
+
   return (
     <Formik
       initialValues={initialValues}
@@ -51,6 +54,11 @@ const Login = () => {
           <div className="wrap-login100">
             <Form className="login100-form validate-form pos-relative d-flex flex-column align-items-center justify-content-center">
               <span className="login100-form-title">ورود اعضا</span>
+
+              <span className="alert alert-info">
+                شماره موبایل : 09110000000
+              </span>
+              <span className="alert alert-info">رمز عبور : 123456</span>
 
               <AuthFormikControl
                 formik={formik}
@@ -86,7 +94,10 @@ const Login = () => {
               </div>
             </Form>
             <div className="login100-pic js-tilt" data-tilt>
-              <img src="/auth/images/img-01.png" alt="IMG" />
+              <img
+                src="https://images.squarespace-cdn.com/content/v1/5eb48d3fef49df153d320521/1615045363001-DJXR515LC4U5UWMKWX01/Sherlock+Toy+Face-high.gif?format=750w"
+                alt="IMG"
+              />
             </div>
           </div>
         );

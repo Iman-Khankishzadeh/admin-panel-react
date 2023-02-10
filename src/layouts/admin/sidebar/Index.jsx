@@ -18,7 +18,10 @@ const Index = () => {
         <div className="p-0 m-0">
           <Avatar
             name={user.full_name || user.user_name}
-            imagePath={user.image || "/assets/images/user4.png"}
+            imagePath={
+              user.image ||
+              "https://images.squarespace-cdn.com/content/v1/5eb48d3fef49df153d320521/1618923365222-83AFAIJ5IXI2I7ZG7059/GodfatherToyFace.jpg?format=750w"
+            }
           />
           <SidebarItem
             targetPath="/"
